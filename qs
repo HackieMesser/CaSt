@@ -7,3 +7,6 @@ data['Age'].mean()
 data2=data.groupby('Age')['Age'].sum()
 data2
 #https://sparkbyexamples.com/pandas/pandas-groupby-sum-examples/     
+#3) What is average CLV (Customer Lifetime Value - sum of all revenue from customer) of
+#customers with subscription and without? Please visualize with a chart of your choice.
+data.groupby('Sex')['Age','Fare'].mean().plot.bar()
