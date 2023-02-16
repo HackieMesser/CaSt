@@ -2,3 +2,8 @@
 #data.loc[data['Pclass']==1,'Age'].mean() put 1 in '' for category
 
 data['Age'].mean()
+
+#2) Who are the top 10% most valuable customers (in terms of revenue)?
+data2=data.groupby('Age')['Age'].sum()
+data2
+#https://sparkbyexamples.com/pandas/pandas-groupby-sum-examples/     
