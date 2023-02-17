@@ -30,3 +30,6 @@ data3
 fig, ax = plt.subplots(figsize=(15,7))
 data3.groupby(['Survived','Pclass']).mean()['Siblings/Spouses Aboard'].unstack().plot(ax=ax)
 
+dfc6= pd.read_csv('/home/coach/Downloads/q6!.csv')
+fig, ax = plt.subplots(figsize=(15,7))
+dfc6.groupby(['cohort']).mean()['order_amount'].plot(ax=ax)
