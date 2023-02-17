@@ -20,3 +20,13 @@ data.groupby(["Sex"])\
 .sort_values(by="Age", ascending=False)
 
 #https://www.codeforests.com/2020/07/18/calculate-percentage-within-group/
+
+#6) What is the average revenue per customer by cohort? Please visualize with a chart of your
+#choice. Which cohort has on average the most valuable, and which the least valuable
+#customers? (Cohort is defined as ‘year’ e.g. if a customer has registered in January 2021, he
+#belongs in the 2021 cohort.)
+data3=data.groupby(['Survived', 'Pclass']).mean()
+data3
+fig, ax = plt.subplots(figsize=(15,7))
+data3.groupby(['Survived','Pclass']).mean()['Siblings/Spouses Aboard'].unstack().plot(ax=ax)
+
