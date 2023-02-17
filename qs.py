@@ -13,3 +13,10 @@ data.groupby('Sex')['Age','Fare'].mean().plot.bar()
 #4) What are the top 3 best-selling (in terms of revenue) products in each article group? What
 #share of orders contained these products?
 data.sort_values('Age',ascending =False).groupby('Sex').head(3)
+#What share of orders contained these products?
+data.groupby(["Sex"])\
+.agg({"Age" : "sum"})[["Age"]]\
+.apply(lambda x: 100*x/x.sum())\
+.sort_values(by="Age", ascending=False)
+
+#https://www.codeforests.com/2020/07/18/calculate-percentage-within-group/
