@@ -10,3 +10,6 @@ data2
 #3) What is average CLV (Customer Lifetime Value - sum of all revenue from customer) of
 #customers with subscription and without? Please visualize with a chart of your choice.
 data.groupby('Sex')['Age','Fare'].mean().plot.bar()
+#4) What are the top 3 best-selling (in terms of revenue) products in each article group? What
+#share of orders contained these products?
+data.sort_values('Age',ascending =False).groupby('Sex').head(3)
